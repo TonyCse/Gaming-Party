@@ -40,11 +40,13 @@ header{
       border: none;
       font-size: 24px;
       font-weight: 500;
-      transition: 0.3;
+      transition: 0.3s;
+      cursor: pointer;
 }
 
 .navbar button:hover{
       background-color: #1EA8D4;
+      color: #FFFFFF;
 }
 
 .header-text{
@@ -128,14 +130,14 @@ header{
       max-width: 1600px;
 }
 
-
-
 .arcade-section .arcade-bloc img{
       margin: 50px;
       border-radius: 30px;
       max-width: 600px;
       width: 100%;
       height: 500px;
+      object-fit: cover;
+      object-position: center;  
 }
 
 .arcade-section .arcade-bloc .arcade-text{
@@ -189,6 +191,7 @@ header{
       border-radius: 10px;
       border: none;
       margin: 25px 0px;
+      cursor: pointer;
 }
 
 .event-section{
@@ -214,7 +217,12 @@ header{
 .event-section ul{
       list-style-type: none;
       display: flex;
-      flex-wrap: wrap
+      flex-wrap: wrap;
+      justify-content: center
+}
+
+.event-section ul li{
+      cursor: pointer;
 }
 
 
@@ -244,6 +252,7 @@ header{
       display: flex;
       flex-wrap: wrap;
       gap: 120px;
+      justify-content: center
 }
 
 .record-section ul li{
@@ -322,7 +331,7 @@ header{
       text-align: center;
       font-size: 50px;
       font-weight: 800;
-      margin: 0;
+      margin: 30px 0 0 0;
       -webkit-text-stroke: 2px;
       -webkit-text-stroke-color: #ffffff;
       color: #1EA8D4;
@@ -351,6 +360,10 @@ header{
       border-radius: 10px;
       border: none;
       margin: 25px 0px;
+      width: 100%;
+      max-width: 139px;
+      height: 100vh;
+      max-height: 54px;
 }
 
 
@@ -366,7 +379,6 @@ footer p {
 @media (max-width: 800px) {
 
       .navbar {
-            margin: 15px;
             max-height: 40px;
       }
 
@@ -436,6 +448,7 @@ footer p {
 
         .event-section h2{
             font-size: 25px;
+            
         }
 
         .event-section ul {
@@ -452,6 +465,17 @@ footer p {
             padding: 0px;
             gap: 40px;
         }
+
+      .record-section ul li:nth-child(1) {
+            order: 3;
+      }
+
+      .record-section ul li:nth-child(2) {
+            order: 1;
+      }
+      .record-section ul li:nth-child(3) {
+            order: 2;
+      }
 
         .record-section h2{
             font-size: 25px;
