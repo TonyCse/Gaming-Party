@@ -364,6 +364,7 @@ header{
       max-width: 139px;
       height: 100vh;
       max-height: 54px;
+      cursor: pointer;
 }
 
 
@@ -378,9 +379,6 @@ footer p {
 
 @media (max-width: 800px) {
 
-      .navbar {
-            max-height: 40px;
-      }
 
       .navbar img {
             max-width: 70px;
