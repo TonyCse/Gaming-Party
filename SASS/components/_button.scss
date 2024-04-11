@@ -1,0 +1,53 @@
+.btn--primary {
+      // Button Font
+      font-family: $primary-font;
+      font-size: 24px;
+      font-weight: 500;
+      // Button Size
+      width: 100%;
+      max-width: 238px;
+      padding: 15px;
+      // Button decoration & animation
+      background-color: $primary-color;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: none;
+}
+
+.btn--primary:hover{
+      // Button Font
+      color: $white-color;
+      // Button decoration
+      background-color: $secondary-color;
+}
+
+.btn--secondary{
+      // Button Font
+      font-family: $primary-font;
+      font-size: 14px;
+      font-weight: 400;
+      color: $white-color;
+      text-align: center;
+      // Button Size
+      width: 100%;
+      max-width: 139px;
+      height: 100vh;
+      max-height: 54px;
+      padding: 10px;
+      margin: 25px 0px;
+      // Button decoration & animation
+      background-color: $red-color;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+}
+
+@media (max-width: 800px) {
+      .btn--primary{
+            max-width: 118px;
+            padding: 10px;
+            font-size: 12px;
+            font-weight: 600;
+      }
+}

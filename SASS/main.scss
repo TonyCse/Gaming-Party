@@ -1,0 +1,350 @@
+@import './base/reset';
+@import './layout/header';
+@import './layout/footer';
+@import './abstract/variables';
+@import './components/button';
+@import './abstract/mixin';
+
+// import font
+
+@font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      src: url("chemin/vers/Inter-Regular.woff2") format("woff2"), url("chemin/vers/Inter-Regular.woff") format("woff");
+}
+
+body{
+      background: linear-gradient(to left, $background-blue, $background-dark);
+}
+
+// -- ARCADE --
+
+.arcade{
+      padding: 50px;
+      overflow: hidden;
+      border-bottom: 1px solid $border-color;
+      &__block{
+            // arcade block size
+            width: 95%;
+            max-width: 1600px;
+            // arcade block position
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            // arcade block decoration
+            background: linear-gradient(to left, $primary-color, $dark-orange);
+            border-radius: 30px;
+            .block__image{
+                  // block image size
+                  width: 100%;
+                  max-width: 600px;
+                  height: 500px;
+                  margin: 50px;
+                  // block image decoration
+                  border-radius: 30px;
+                  object-fit: cover;
+                  object-position: center;
+            }
+            .block__text{
+                  // block text position
+                  display: flex;
+                  justify-content: center;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  gap: 10px;
+                  // block text size
+                  width: 100%;
+                  max-width: 500px;
+                  margin: 50px;
+                  .text__title{
+                        // text title mixin
+                        @include title-card;
+                        // text title font
+                        color: $white-color;
+                        font-size: 28px;
+                  }
+                  .text__subtitle{
+                        // text title mixin
+                        @include title-card;
+                        // text subtitle font
+                        color: $black-color;
+                        font-size: 28px;
+                  }
+                  .text__paragraph{
+                        // text subtitle font
+                        font-family: $primary-font;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $black-color;
+                        text-align: left;
+                  }
+            }
+      }
+}
+
+// -- EVENT --
+
+.event{
+      // event position
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px auto;
+      // event decoration
+      border-bottom: 1px solid $border-color;
+      &__title{
+            @include yellow-outline-title;
+      }
+      &__list{
+            // event list position
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            // event list decoration
+            list-style-type: none;
+            .event__item{
+                  cursor: pointer;
+                  .event__image{
+                        // item image size
+                        width: 100%;
+                        max-width: 300px;
+                  }
+            }
+      }
+}
+
+
+// -- RECORD --
+
+.record{
+      // record position
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px auto;
+      // record decoration
+      border-bottom: 1px solid $border-color;
+      &__title{
+            @include yellow-outline-title;
+      }
+      &__list{
+            // record list position
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 75px auto;
+            gap: 120px;
+            // record list decoration
+            list-style-type: none;
+            .record__item{
+                  display: flex;
+                  flex-direction: column;
+                  gap: 25px;
+                  .record__rank--third{
+                        @include record-rank;
+                        color: #C16D5F;
+                  }
+                  .record__rank--first{
+                        @include record-rank;
+                        color: $primary-color
+                  }
+                  .record__rank--two{
+                        @include record-rank;
+                        color: $white-color;
+                  }
+                  .record__image{
+                        // record image size
+                        width: 300px;
+                        height: 300px;
+                        // record image decoration
+                        border-radius: 20px;
+                        object-position: center;
+                        object-fit: cover;
+                  }
+                  .record__name{
+                        // record name font
+                        font-family: $primary-font;
+                        text-align: left;
+                        font-size: 25px;
+                        font-weight: 800;
+                        color: $white-color;
+                  }
+                  .record__text{
+                        // record text position
+                        display: flex;
+                        justify-content: space-between;
+                        .record__paragraph{
+                              // record paragraph font
+                              font-family: $primary-font;
+                              text-align: left;
+                              font-size: 20px;
+                              font-weight: 800;
+                              color: $secondary-color;
+                        }
+                  }
+            }
+      }
+}
+
+// -- NEWSLETTER --
+
+.newsletter{
+      border-bottom: 1px solid $border-color;
+      &__block{
+            // newsletter block size
+            width: 95%;
+            max-width: 1600px;
+            margin: 50px auto;
+            // newsletter block position
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            // newsletter block decoration
+            background: linear-gradient(to left, #FDBB57, #997135);
+            border-radius: 20px;
+            .newsletter__title{
+                  @include white-outline-title;
+                  // newsletter title font
+                  font-size: 50px;
+                  // newsletter title decoration
+                  margin: 30px 0 0 0;
+            }
+            .newsletter__input{
+                  // newsletter input font
+                  font-family: $primary-font;
+                  font-size: 25px;
+                  font-weight: 400;
+                  // newsletter input decoration
+                  border-radius: 10px;
+                  border: none;
+                  // newsletter input size
+                  padding: 10px 20px;
+                  width: 60%;
+            }
+      }
+}
+
+// -- RESPONSIVE BREAKPOINT 800PX --
+
+@media (max-width: 800px) {
+
+// -- ARCADE RESPONSIVE--
+
+      .arcade{
+            padding: 20px;
+            &__block{
+                  // arcade block position
+                  padding: 10px;
+                  gap: 75px;
+                  // arcade block decoration
+                  background: linear-gradient(to top, $primary-color, $dark-orange);
+                  .block__image{
+                        // block image size
+                        margin: 0;
+                        height: 300px;
+                  }
+                  .block__text{
+                        margin: 0px;
+                        .text__title{
+                              // text title font
+                              font-size: 22px;
+                        }
+                        .text__subtitle{
+                                 // text title font
+                                 font-size: 22px;
+                        }
+                        .text__paragraph{
+                              // text subtitle font
+                              font-size: 13px;
+                        }
+                  }
+            }
+      }
+
+      // -- EVENT RESPONSIVE--
+
+      .event{
+            &__title{
+                  font-size: 25px;
+            }
+            &__list{
+                  // event list position
+                  justify-content: center;
+                  padding: 0px;
+                  .event__item{
+                        .event__image{
+                              // item image size
+                              max-width: 250px;
+                        }
+                  }
+            }
+      }
+
+      // -- RECORD RESPONSIVE--
+
+      .record{
+            &__title{
+                  font-size: 25px;
+            }
+            &__list{
+                  // record list position
+                  justify-content: center;
+                  padding: 0px;
+                  gap: 40px;
+                  .record__item{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 25px;
+                  }
+            }
+      }
+
+      // .record-section ul li:nth-child(1) {
+      //       order: 3;
+      // }
+
+      // .record-section ul li:nth-child(2) {
+      //       order: 1;
+      // }
+      // .record-section ul li:nth-child(3) {
+      //       order: 2;
+      // }
+
+      // -- NEWSLETTER RESPONSIVE --
+
+      .newsletter{
+            &__block{
+                  .newsletter__title{
+                        // newsletter title font
+                        font-size: 32px;
+                  }
+                  .newsletter__input{
+                        // newsletter input font
+                        font-size: 18px;
+                  }
+            }
+      }
+}
+
+// -- RESPONSIVE BREAKPOINT 1470PX --
+
+
+@media (max-width: 1470px) {
+
+      // -- ARCADE RESPONSIVE --
+
+      .arcade{
+            &__block{
+                  .block__image{
+                        // block image size
+                        border-radius: 30px;
+                        max-width: none;
+                  }
+                  .block__text{
+                        max-width: none;
+                  }
+            }
+      }
+}

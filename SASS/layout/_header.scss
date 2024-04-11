@@ -1,0 +1,112 @@
+@import '../abstract/variables';
+@import '../abstract/mixin';
+
+.header {
+      // background image
+      background-image: url(images/quadrillage-header.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      .nav{
+            // navbar position
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            align-items: center;
+            // navbar size
+            height: 100%;
+            max-height: 100px;
+            margin: 0 25px;
+            &__logo{
+                  // navbar logo size
+                  width: 100%;
+                  max-width: 100px; 
+            }
+      }
+      &__text {
+            // header text position
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .text__paragraph{
+                  // header paragraph font
+                  font-family: $primary-font;
+                  color: $white-color;
+                  text-align: center;
+                  font-size: 35px;
+                  font-weight: 400;
+            }
+            .text__title {
+                  // header title mixin
+                  @include degraded-title;
+                  // header title font
+                  font-family: $primary-font;
+                  text-transform: uppercase;
+                  font-size: 102px;
+            }
+            .text__subtitle {
+                  // header subtitle mixin
+                  @include white-outline-title;
+                  // header subtitle font
+                  font-family: $primary-font;
+                  font-size: 102px;
+            }
+            .text__date{
+                  // header date background
+                  background: url(images/borne.png);
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: 430px;
+                  // header date size
+                  height: 400px;
+                  width: 100%;
+                  // header date postion
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-evenly;
+                  .date__timetable{
+                        // header timetable mixin
+                        @include degraded-title;
+                        // header timetable font
+                        font-family: $primary-font;
+                        font-size: 72px;
+                        // header timetable postion
+                        display: flex;
+                  }
+            }
+      }
+}
+
+@media (max-width: 800px) {
+
+      .header {
+            .nav{
+                  .nav__logo{
+                        // navbar logo size
+                        max-width: 70px;
+                  }
+            }
+            .header__text {
+                  .text__paragraph{
+                        // header paragraph font
+                        font-size: 20px;
+                  }
+                  .text__title {
+                        font-size:56px;
+                  }
+                  .text__subtitle {
+                        // header subtitle font
+                        font-size:56px;
+                  }
+                  .text__date{
+                        // header date background
+                        background-size: 260px;
+                        // header date postion
+                        justify-content: space-around;
+                        .date__timetable{
+                              // header timetable font
+                              font-size: 22px;
+                        }
+                  }
+            }
+      }
+}
